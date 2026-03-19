@@ -26,15 +26,22 @@ code --install-extension /tmp/latex-toolbar-0.0.1.vsix --force
 
 > La extensión solo actúa sobre archivos con `languageId === 'latex'`.
 
-## Botones disponibles
+## Buttons
 
-| Botón | Comando LaTeX | Descripción |
+| Icon | LaTeX command | Description |
 |---|---|---|
-| **B** | `\textbf{...}` | Negrita |
-| *I* | `\textit{...}` | Cursiva |
-| `M` | `\texttt{...}` | Monoespaciado |
-| U̲ | `\underline{...}` | Subrayado |
-| fn | `\footnote{...}` | Nota al pie |
+| **B** | `\textbf{...}` | Bold |
+| *I* | `\textit{...}` | Italic |
+| `</>` | `\texttt{...}` | Monospace |
+| U̲ | `\underline{...}` | Underline |
+| • — | `\begin{itemize}` | Bullet list |
+| 1. — | `\begin{enumerate}` | Numbered list |
+| `</>` | `\begin{lstlisting}` | Inline code block |
+| 📄`</>` | `\lstinputlisting{...}` | External code file |
+| ▐□ | `\begin{tcolorbox}` | Colored note box |
+| 🏔 | `\begin{figure}` | Single figure |
+| 🏔🏔 | `\begin{minipage}` | Two side-by-side figures |
+| fn¹ | `\footnote{...}` | Footnote |
 
 ## Archivos de la extensión
 
