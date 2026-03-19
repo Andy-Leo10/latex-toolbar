@@ -28,26 +28,20 @@ code --install-extension /tmp/latex-toolbar-0.0.1.vsix --force
 
 ## Botones disponibles
 
-| Botón | Comando LaTeX | Resultado |
+| Botón | Comando LaTeX | Descripción |
 |---|---|---|
 | **B** | `\textbf{...}` | Negrita |
 | *I* | `\textit{...}` | Cursiva |
-| `TT` | `\texttt{...}` | Monoespaciado |
+| `M` | `\texttt{...}` | Monoespaciado |
 | U̲ | `\underline{...}` | Subrayado |
-| `\comment{...}` | Tachado (paquete `changes`) | ~~texto~~ |
-| `\section{...}` | Sección | Sección |
-| `\subsection{...}` | Subsección | Subsección |
-| `\subsubsection{...}` | Sub-subsección | Sub-subsección |
-| `\textcolor{red}{...}` | Color rojo | Texto en rojo |
-| `\label{...}` | Etiqueta de referencia | — |
-| `\ref{...}` | Referencia | — |
-| `\cite{...}` | Cita bibliográfica | — |
+| fn | `\footnote{...}` | Nota al pie |
 
 ## Archivos de la extensión
 
 ```
 sinso.latex-toolbar-0.0.1/
-├── extension.js       ← lógica principal (activación, webview, wrapping)
+├── extension.js       ← lógica principal (activación, wrapping de texto)
+├── toolbar.html       ← interfaz de la barra lateral (botones, estilos)
 ├── package.json       ← manifiesto de la extensión (comandos, vistas, icono)
 ├── icon.svg           ← icono de la barra de actividad (forma de T)
 ├── .vsixmanifest      ← generado automáticamente al instalar el .vsix
@@ -59,10 +53,20 @@ sinso.latex-toolbar-0.0.1/
 Edita directamente los archivos en `~/.vscode/extensions/sinso.latex-toolbar-0.0.1/`.  
 Después, recarga VS Code con **Ctrl+Shift+P → Developer: Reload Window** para aplicar cambios.
 
-Para agregar un nuevo botón, edita `extension.js`:
+- **Cambiar la apariencia** (botones, estilos, layout): edita `toolbar.html`.
+- **Añadir un nuevo comando**: edita `extension.js` y `toolbar.html`.
 
-1. Añade una entrada en el objeto `WRAPPERS`:
+Para agregar un nuevo botón:
+
+1. Añade una entrada en `WRAPPERS` dentro de `extension.js`:
    ```js
-   'nombre_boton': ['&#92;comando{', '}'],
+   'nombre_id': ['\\comando{', '}'],
    ```
-2. Añade el botón correspondiente en la función `getHtml()` dentro de `resolveWebviewView`.
+2. Añade el botón en `toolbar.html`:
+   ```html
+   <button class="btn" onclick="send('nombre_id')">
+     <span class="ico">X</span>
+     <span class="lbl">Descripción</span>
+     <span class="cmd">&#92;comando{}</span>
+   </button>
+   ```
