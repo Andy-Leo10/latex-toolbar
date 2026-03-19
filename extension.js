@@ -9,6 +9,11 @@ const WRAPPERS = {
     italic:    ['\\textit{',    '}'],
     monospace: ['\\texttt{',    '}'],
     underline: ['\\underline{', '}'],
+    itemize:   ['\\begin{itemize}\n    \\item ', '\n\\end{itemize}'],
+    enumerate: ['\\begin{enumerate}\n\t\\item ', '\n\\end{enumerate}'],
+    lstlisting: ['\\begin{lstlisting}[style=code, language=Bash, caption={DESCRIPCION}]\n', '\n\\end{lstlisting}'],
+    lstinputlisting: ['\\lstinputlisting[style=code, language=Bash, caption={DESCRIPCION}]{RUTA}\n', ''],
+    tcolorbox: ['\\begin{tcolorbox}\n', '\n\\end{tcolorbox}'],
     footnote:  ['\\footnote{',  '}'],
 };
 
