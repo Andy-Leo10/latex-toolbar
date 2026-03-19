@@ -1,0 +1,43 @@
+{
+	"name": "latex-toolbar",
+	"displayName": "LaTeX Toolbar",
+	"description": "Barra de herramientas lateral para formatear documentos LaTeX",
+	"version": "0.0.1",
+	"publisher": "sinso",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onView:latexToolbar.view"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "latexToolbarContainer",
+					"title": "LaTeX Toolbar",
+					"icon": "./icon.svg"
+				}
+			]
+		},
+		"views": {
+			"latexToolbarContainer": [
+				{
+					"icon": "./icon.svg",
+					"type": "webview",
+					"id": "latexToolbar.view",
+					"name": "LaTeX Toolbar"
+				}
+			]
+		}
+	},
+	"__metadata": {
+		"installedTimestamp": 1773872691344,
+		"targetPlatform": "undefined",
+		"size": 7871
+	}
+}
