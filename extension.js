@@ -17,6 +17,14 @@ const WRAPPERS = {
     figure:    ['\\begin{figure}[H]\n\t\\centering\n\t\\includegraphics[width=0.5\\textwidth]{RUTA}\n\t\\caption{DESCRIPCION}\n\\end{figure}', ''],
     figures:   ['\\begin{figure}[H]\n\t\\centering\n\t\\begin{minipage}[b]{0.45\\textwidth}\n\t\t\\centering\n\t\t\\includegraphics[width=\\textwidth]{RUTA}\n\t\\end{minipage}\n\t\\begin{minipage}[b]{0.45\\textwidth}\n\t\t\\centering\n\t\t\\includegraphics[width=\\textwidth]{RUTA}\n\t\\end{minipage}\n\t\\caption{DESCRIPCION}\n\\end{figure}', ''],
     footnote:  ['\\footnote{',  '}'],
+    quoted:    ['``',            "''"],
+    part:          ['\\part{',          '}'],
+    chapter:       ['\\chapter{',       '}'],
+    section:       ['\\section{',       '}'],
+    subsection:    ['\\subsection{',    '}'],
+    subsubsection: ['\\subsubsection{', '}'],
+    paragraph:     ['\\paragraph{',     '}'],
+    subparagraph:  ['\\subparagraph{',  '}'],
 };
 
 class LatexToolbarProvider {
