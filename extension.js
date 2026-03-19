@@ -12,8 +12,10 @@ const WRAPPERS = {
     itemize:   ['\\begin{itemize}\n    \\item ', '\n\\end{itemize}'],
     enumerate: ['\\begin{enumerate}\n\t\\item ', '\n\\end{enumerate}'],
     lstlisting: ['\\begin{lstlisting}[style=code, language=Bash, caption={DESCRIPCION}]\n', '\n\\end{lstlisting}'],
-    lstinputlisting: ['\\lstinputlisting[style=code, language=Bash, caption={DESCRIPCION}]{RUTA}\n', ''],
+    lstinputlisting: ['\\lstinputlisting[style=code, language=Bash, caption={DESCRIPCION}]{RUTA}', ''],
     tcolorbox: ['\\begin{tcolorbox}\n', '\n\\end{tcolorbox}'],
+    figure:    ['\\begin{figure}[H]\n\t\\centering\n\t\\includegraphics[width=0.5\\textwidth]{RUTA}\n\t\\caption{DESCRIPCION}\n\\end{figure}', ''],
+    figures:   ['\\begin{figure}[H]\n\t\\centering\n\t\\begin{minipage}[b]{0.45\\textwidth}\n\t\t\\centering\n\t\t\\includegraphics[width=\\textwidth]{RUTA}\n\t\\end{minipage}\n\t\\begin{minipage}[b]{0.45\\textwidth}\n\t\t\\centering\n\t\t\\includegraphics[width=\\textwidth]{RUTA}\n\t\\end{minipage}\n\t\\caption{DESCRIPCION}\n\\end{figure}', ''],
     footnote:  ['\\footnote{',  '}'],
 };
 
